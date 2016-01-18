@@ -6,10 +6,8 @@
   </nav>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 video-con"><div id="main"></div></div>
-      <div class="col-md-6 video-con"><div id="main2"></div></div>
-  </div>
-
+      {{> torrents}}
+    </div>
   </div>
   <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
@@ -17,3 +15,21 @@
     </div>
   </nav>
 </body>
+<template name="torrents">
+  <form class="new-torrent">
+  <input type="text" name="text" class="col-xs-12" placeholder="Escribe para agregar" />
+  </form>
+  {{#each torrents}}
+    {{> torrent}}
+  {{/each}}
+</template>
+
+<template name="torrent">
+  <div class="video-con col-md-6">
+    <div class="inside">
+      <video width="400" id={{this._id}} controls>
+        {{torrente}}
+      </video>
+    </div>
+  </div>
+</template>

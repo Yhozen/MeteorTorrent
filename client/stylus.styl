@@ -1,6 +1,7 @@
-/* CSS declarations go here */
+/* CSS (stylus) declarations go here */
 body
   padding-top 100px
+  padding-bottom 80px
   background #607D8B
 
 .navbar
@@ -10,16 +11,23 @@ body
 .navbar-default
     border-color rgba(#333, 0) !important
 
+.new-torrent
+  box-shadow 0px 6px 25px 1px rgba(0,0,0,0.8)
 
+.video-con
+  margin 20px 0px
+  max-height 325px
 
 video
   width 100%
-  max-width 500px
   height auto
-  margin auto 10px
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 
-#main, #main2
+.inside
   height 325px
+  max-height 325px
   width auto
-  background-color white
+  background-color rgba(255,255,255,.66)
   box-shadow 0px 6px 25px 1px rgba(0,0,0,0.75)
