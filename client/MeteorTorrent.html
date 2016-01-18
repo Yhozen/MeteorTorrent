@@ -5,6 +5,7 @@
     </div>
   </nav>
   <div class="container">
+    {{> inputVideo}}
     <div class="row">
       {{> torrents}}
     </div>
@@ -16,20 +17,24 @@
   </nav>
 </body>
 <template name="torrents">
-  <form class="new-torrent">
-  <input type="text" name="text" class="col-xs-12" placeholder="Escribe para agregar" />
-  </form>
   {{#each torrents}}
     {{> torrent}}
   {{/each}}
-</template>
 
+</template>
 <template name="torrent">
   <div class="video-con col-md-6">
     <div class="inside">
-      <video width="400" id={{this._id}} controls>
+      <video id={{this._id}} controls>
         {{torrente}}
       </video>
     </div>
+  </div>
+</template>
+<template name="inputVideo">
+  <div class="container-fluid">
+    <form class="new-torrent">
+    <input type="text" name="text" class="col-xs-12" placeholder="Escribe para agregar" />
+    </form>
   </div>
 </template>

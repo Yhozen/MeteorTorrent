@@ -1,4 +1,4 @@
-Template.torrents.events({
+Template.inputVideo.events({
   "submit .new-torrent": function (event) {
     // Prevent default browser form submit
     event.preventDefault();
