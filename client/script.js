@@ -1,0 +1,107 @@
+//
+//
+// var muteButton = document.getElementById("mute");
+// var fullScreenButton = document.getElementById("full-screen");
+//
+// // Sliders
+// var seekBar = document.getElementById("seek-bar");
+// var volumeBar = document.getElementById("volume-bar");
+
+
+Template.videoTemp.events({
+	"click #play-pause": function(event, template){
+		var video = document.getElementById("video");
+		// Buttons
+		var playButton = document.getElementById("play-pause");
+		if (video.paused == true) {
+			// Play the video
+			video.play();
+
+			// Update the button text to 'Pause'
+			playButton.innerHTML = "<i class='fa fa-pause fa-2x'></i>";
+		} else {
+			// Pause the video
+			video.pause();
+
+			// Update the button text to 'Play'
+			playButton.innerHTML = "<i class='fa fa-play fa-2x'></i>";
+		}
+	},
+	"click #mute" : function () {
+		var video = document.getElementById("video");
+		var muteButton = document.getElementById("mute");
+		if (video.muted == false) {
+			// Mute the video
+			video.muted = true;
+
+			// Update the button text
+			muteButton.innerHTML = "Unmute";
+		} else {
+			// Unmute the video
+			video.muted = false;
+
+			// Update the button text
+			muteButton.innerHTML = "Mute";
+		}
+	},
+	"click #full-screen": function () {
+		var video = document.getElementById("video");
+		if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement) {
+			if (video.exitFullscreen) {
+				video.exitFullscreen();
+			} else if (video.webkitExitFullscreen) {
+				video.webkitExitFullscreen();
+			} else if (video.mozCancelFullScreen) {
+				video.mozCancelFullScreen();
+			} else if (document.msExitFullscreen) {
+				video.msExitFullscreen();
+			}
+			fullScreenButton.innerHTML= "<i class='fa fa-arrows-alt fa-2x'></i>";
+
+	  } else {
+			if (video.requestFullscreen) {
+				video.requestFullscreen();
+			} else if (video.mozRequestFullScreen) {
+				video.mozRequestFullScreen(); // Firefox
+			} else if (video.webkitRequestFullscreen) {
+				video.webkitRequestFullscreen(); // Chrome and Safari
+			}
+			fullScreenButton.innerHTML= "<i class='fa fa-compress fa-2x'></i>";
+	  }
+	},
+	"change #seek-bar" : function () {
+		var video = document.getElementById("video");
+		var seekBar = document.getElementById("seek-bar");
+		// Calculate the new time
+		var time = video.duration * (seekBar.value / 100);
+
+		// Update the video time
+		video.currentTime = time;
+	},
+	"timeupdate #video" : function () {
+		var video = document.getElementById("video");
+		var seekBar = document.getElementById("seek-bar");
+		// Calculate the slider value
+		var value = (100 / video.duration) * video.currentTime;
+
+		// Update the slider value
+		seekBar.value = value;
+	},
+	"change #volume-bar": function () {
+		var video = document.getElementById("video");
+		var volumeBar = document.getElementById("volume-bar");
+		video.volume = volumeBar.value;
+	}
+});
+
+
+// // Pause the video when the seek handle is being dragged
+// seekBar.addEventListener("mousedown", function() {
+// 	video.pause();
+// });
+//
+// // // Play the video when the seek handle is dropped
+// // seekBar.addEventListener("mouseup", function() {
+// // 	video.play();
+// // });
+//

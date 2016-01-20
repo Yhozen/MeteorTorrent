@@ -21,6 +21,9 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 arboleya:electrify
 twbs:bootstrap
 stylus
+kadira:flow-router
+kadira:blaze-layout
+fortawesome:fontawesome
 
 
 #<NPM>
