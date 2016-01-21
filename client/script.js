@@ -38,7 +38,7 @@ Template.videoTemp.events({
 			video.volume = volumeBar.value;
 
 			// Update the button text
-			muteButton.innerHTML = "Unmute";
+			muteButton.innerHTML = "<i class='fa fa-volume-off fa-2x'></i>";
 		} else {
 			// Unmute the video
 			var video = document.getElementById("video");
@@ -47,7 +47,7 @@ Template.videoTemp.events({
 			video.volume = volumeBar.value;
 
 			// Update the button text
-			muteButton.innerHTML = "Mute";
+			muteButton.innerHTML = "<i class='fa fa-volume-up fa-2x'></i>";
 		}
 	},
 	"click #full-screen": function () {
