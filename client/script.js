@@ -98,6 +98,19 @@ Template.videoTemp.events({
 		var video = document.getElementById("video");
 		var volumeBar = document.getElementById("volume-bar");
 		video.volume = volumeBar.value;
+		if ((video.volume != 0) && (video.volume < 0.8)){
+			var muteButton = document.getElementById("mute");
+
+			muteButton.innerHTML = "<i class='fa fa-volume-down fa-2x'></i>";
+		} else if (video.volume > 0.8) {
+			var muteButton = document.getElementById("mute");
+
+			muteButton.innerHTML = "<i class='fa fa-volume-up fa-2x'></i>";
+		} else {
+			var muteButton = document.getElementById("mute");
+
+			muteButton.innerHTML = "<i class='fa fa-volume-off fa-2x'></i>";			
+		}
 	}
 });
 
