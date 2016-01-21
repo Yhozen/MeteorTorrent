@@ -1,9 +1,12 @@
 #video-container {
-	width: 640px;
-	height: 365px;
+	width: auto;
+	height: auto;
 	position: relative;
 }
-
+video {
+	width: 100%;
+	height: auto;
+}
 #video-controls {
 	position: absolute;
 	bottom: 0;
