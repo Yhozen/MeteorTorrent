@@ -46,11 +46,12 @@ Template.videoTemp.events({
 	},
 	"click #full-screen": function () {
 		var video = document.getElementById("video");
+		var fullScreenButton = document.getElementById("full-screen");
 		if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement) {
 			if (video.exitFullscreen) {
 				video.exitFullscreen();
 			} else if (video.webkitExitFullscreen) {
-				video.webkitExitFullscreen();
+				document.webkitExitFullscreen();
 			} else if (video.mozCancelFullScreen) {
 				video.mozCancelFullScreen();
 			} else if (document.msExitFullscreen) {
@@ -94,6 +95,30 @@ Template.videoTemp.events({
 	}
 });
 
+Template.videoTemp.events({
+  "mousemove #video": function(event, template){
+    var timer;
+    var stoppedElement= document.getElementById("video-controls");  // store element for faster access
+		var videoContainer = document.getElementById("video-container");
+
+		if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement) {
+	    function mouseStopped(){
+				if (stoppedElement.parentElement.querySelector(':hover') === stoppedElement) {
+					stoppedElement.classList.remove("fadeOutDown");                              // the actual function that is called
+				} else {
+					stoppedElement.classList.add("fadeOutDown");
+					videoContainer.classList.add("no-cursor");
+				}
+	    }
+			stoppedElement.classList.remove("fadeOutDown");
+			videoContainer.classList.remove("no-cursor");
+	    clearTimeout(timer);
+	    timer=setTimeout(mouseStopped,2500);
+	 }
+	 stoppedElement.classList.remove("fadeOutDown");
+	 videoContainer.classList.remove("no-cursor");
+  }
+});
 
 // // Pause the video when the seek handle is being dragged
 // seekBar.addEventListener("mousedown", function() {
