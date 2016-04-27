@@ -1,6 +1,7 @@
 import React from "react";
 
 export class TorrentComp extends React.Component {
+
   render(){
     return (
       <a href="/video/{{_id}}">
