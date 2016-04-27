@@ -1,1 +1,2 @@
-WebTorrent = require('webtorrent');
+
+// WebTorrent = require('webtorrent');
