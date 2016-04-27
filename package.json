@@ -1,0 +1,29 @@
+{
+  "name": "meteor-torrent",
+  "version": "1.0.0",
+  "description": "WebTorrent App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yhozen/MeteorTorrent.git"
+  },
+  "keywords": [
+    "torrent",
+    "popcorn",
+    "web"
+  ],
+  "author": "Garox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yhozen/MeteorTorrent/issues"
+  },
+  "homepage": "https://github.com/Yhozen/MeteorTorrent",
+  "dependencies": {
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-mounter": "^1.2.0"
+  }
+}

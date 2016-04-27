@@ -1,2 +1,0 @@
-
-// WebTorrent = require('webtorrent');
