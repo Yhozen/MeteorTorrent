@@ -24,10 +24,10 @@ export default class AddForm extends React.Component {
     return (
       <form className="new-torrent" onSubmit={this.submit.bind(this)}>
         <div className="form-group">
-          <input type="text" name="name" className="col-xs-12" placeholder="Escribe el nombre" />
-          <input type="text" name="text" className="col-xs-12" placeholder="Escribe el MagnetURL" />
-          <input type="text" name="url" className="col-xs-12" placeholder="Escribe la url de la imagen" />
-          <input type="submit" className="btn btn-primary btn-raised" value="Enviar" />
+          <input type="text" name="name" className="col-xs-12" placeholder="Write name here" />
+          <input type="text" name="text" className="col-xs-12" placeholder="Write MagnetURL" />
+          <input type="text" name="url" className="col-xs-12" placeholder="Write url of the image" />
+          <input type="submit" className="btn btn-primary btn-raised" value="Submit" />
         </div>
       </form>
     )

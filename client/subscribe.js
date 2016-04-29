@@ -1,1 +1,1 @@
-Meteor.subscribe("torrents");
+// Meteor.subscribe("torrents");

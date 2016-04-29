@@ -12,6 +12,5 @@ export const MainLayout = ({content}) => (
     </div>
 
 
-  <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
   </div>
 )
