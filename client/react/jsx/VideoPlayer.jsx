@@ -49,7 +49,7 @@ export default class VideoPlayer extends TrackerReact(React.Component) {
         <div className="col-xs-12">
         <div id="video-container" >
         {/* Video */}
-          <video id="video">
+          <video id="video" autoplay onMouseMove={this.hideControls}>
             <p>
               Your browser does not support HTML5 video
             </p>
@@ -106,6 +106,31 @@ export default class VideoPlayer extends TrackerReact(React.Component) {
 
       // Update the slider value
       seekBar.value = value;
+    }
+  }
+
+  hideControls() {
+    if (document.getElementById("video") != undefined) {
+      var timer;
+      var stoppedElement= document.getElementById("video-controls");  // store element for faster access
+  		var videoContainer = document.getElementById("video-container");
+
+  		if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement) {
+  	    function mouseStopped(){
+  				if (stoppedElement.parentElement.querySelector(':hover') === stoppedElement) {
+  					stoppedElement.classList.remove("fadeOutDown");                              // the actual function that is called
+  				} else {
+  					stoppedElement.classList.add("fadeOutDown");
+  					videoContainer.classList.add("no-cursor");
+  				}
+  	    }
+  			stoppedElement.classList.remove("fadeOutDown");
+  			videoContainer.classList.remove("no-cursor");
+  	    clearTimeout(timer);
+  	    timer=setTimeout(mouseStopped,2500);
+  	 }
+  	 stoppedElement.classList.remove("fadeOutDown");
+  	 videoContainer.classList.remove("no-cursor");
     }
   }
 
