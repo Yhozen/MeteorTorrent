@@ -71,7 +71,7 @@ video::-webkit-media-controls {
 /* RANGE CSS*/
 
 
-input {
+input.slider {
   appearance: none;
   -webkit-appearance: none;
   background: none;
@@ -83,27 +83,27 @@ input {
   overflow: hidden;
   width: 45px;
 }
-input:focus {
+input.slider:focus {
   box-shadow: none;
   outline: none;
 }
-input:hover::-webkit-slider-thumb, input:active::-webkit-slider-thumb {
+input.slider:hover::-webkit-slider-thumb, input.slider:active::-webkit-slider-thumb {
   width: 15px;
   height: 15px;
   background: #0866A1;
 }
-input:hover::-moz-range-thumb, input:active::-moz-range-thumb {
+input.slider:hover::-moz-range-thumb, input.slider:active::-moz-range-thumb {
   opacity: 1;
 }
-input:hover::-ms-thumb, input:active::-ms-thumb {
+input.slider:hover::-ms-thumb, input.slider:active::-ms-thumb {
   opacity: 1;
 }
-input::-webkit-slider-runnable-track {
+input.slider::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   background: #666;
   height: 3px;
 }
-input::-webkit-slider-thumb {
+input.slider::-webkit-slider-thumb {
   width: 0px;
   height: 0px;
   -webkit-appearance: none;
@@ -112,7 +112,7 @@ input::-webkit-slider-thumb {
   margin-top: -5px;
   position: relative;
 }
-input::-webkit-slider-thumb:before {
+input.slider::-webkit-slider-thumb:before {
   position: absolute;
   top: 5px;
   right: 50%;
@@ -122,11 +122,11 @@ input::-webkit-slider-thumb:before {
   height: 3px;
   pointer-events: none;
 }
-input::-moz-range-track {
+input.slider::-moz-range-track {
   width: 45px;
   height: 3px;
 }
-input::-moz-range-thumb {
+input.slider::-moz-range-thumb {
   width: 15px;
   height: 15px;
   background: #0866A1;
@@ -135,13 +135,13 @@ input::-moz-range-thumb {
   position: relative;
   opacity: 0;
 }
-input::-moz-range-progress {
+input.slider::-moz-range-progress {
   height: 3px;
   background: #0866A1;
   border: 0;
   margin-top: 0;
 }
-input::-ms-track {
+input.slider::-ms-track {
   background: transparent;
   border: 0;
   border-color: transparent;
@@ -152,7 +152,7 @@ input::-ms-track {
   margin-top: 10px;
   width: 45px;
 }
-input::-ms-thumb {
+input.slider::-ms-thumb {
   border: 0px;
   border-radius: 50%;
   height: 10px;
@@ -161,14 +161,14 @@ input::-ms-thumb {
   background: #0866A1;
   opacity: 0;
 }
-input::-ms-fill-lower {
+input.slider::-ms-fill-lower {
   background: #0866A1;
   border-radius: 0;
 }
-input::-ms-fill-upper {
+input.slider::-ms-fill-upper {
   background: #666;
   border-radius: 0;
 }
-input::-ms-tooltip {
+input.slider::-ms-tooltip {
   display: none;
 }

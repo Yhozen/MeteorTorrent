@@ -1,15 +1,20 @@
 /* CSS (stylus) declarations go here */
+navbarColor = #244F58;//397D8B;
+bodyColor = #56828b;//397D8B;
+aColor = #71979E ;
+aHover = #59C2D7;
+
 body
   padding-top 100px
   padding-bottom 80px
-  background #607D8B
+  background bodyColor
 
 .navbar
-  background #546E7A
-  box-shadow 0px 6px 25px 1px rgba(0,0,0,0.65)
+  background navbarColor
+  box-shadow 0px 6px 7px 1px rgba(0,0,0,0.2)
 
 .navbar-default
-    border-color rgba(#333, 0) !important
+  border-bottom 5px solid rgba(#333, 0)
 
 .new-torrent
   box-shadow 0px 6px 25px 1px rgba(0,0,0,0.8)
@@ -26,6 +31,16 @@ body
   background-color rgba(255,255,255,.66)
   background-size cover
   box-shadow 0px 6px 25px 1px rgba(0,0,0,0.75)
+  border-radius 2px
+a.navBtn
+  color aColor
+  &:hover
+    color aHover
+    text-decoration none
+  &:focus
+    color aHover
+    text-decoration none
+    outline 0
 //
 // video
 //   width 100%

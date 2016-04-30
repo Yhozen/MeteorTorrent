@@ -1,36 +1,23 @@
 import React from "react";
-import TrackerReact from "meteor/ultimatejs:tracker-react";
+// import TrackerReact from "meteor/ultimatejs:tracker-react";
 
 var WebtorrentMin = require("../../../public/js/webtorrent.min.js");
 
 
-export default class VideoPlayer extends TrackerReact(React.Component) {
-  // Torrent stuff
-  constructor() {
-     super();
-     this.state = {
-       subscription: {
-         torrents:  Meteor.subscribe("torrents")
-         }
-   }
- }
+export default class VideoPlayer extends React.Component {
+
   componentWillUnmount() {
-       this.state.subscription.torrents.stop();
+      //  this.state.subscription.torrents.stop();
 
        var video = document.getElementById("video");
        video.removeEventListener('timeupdate', this.updateProgress);
 
    }
 
-  torrent() {
-    let id = FlowRouter.getParam("id");
-    let result = Torrents.find({_id:id}).fetch()[0];
-    return result;
-    }
   //Render the video player with
   render() {
-    if (this.torrent() != undefined) {
-      let torrentId = this.torrent().magnetURL;
+    //if (this.props.torrent != undefined) {
+      let torrentId = this.props.torrent.magnetURL;
       const torrentDiv = "#video";
 
       client = new WebtorrentMin();
@@ -41,13 +28,13 @@ export default class VideoPlayer extends TrackerReact(React.Component) {
         // Display the file by adding it to the DOM. Supports video, audio, image, etc. files
         file.renderTo(torrentDiv)
       });
-    }
+  //  }
     return (
 
         <div className="col-xs-12">
         <div id="video-container" >
         {/* Video */}
-          <video id="video" autoplay onMouseMove={this.hideControls}>
+          <video id="video" onMouseMove={this.hideControls}>
             <p>
               Your browser does not support HTML5 video
             </p>

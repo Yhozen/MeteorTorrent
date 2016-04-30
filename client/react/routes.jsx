@@ -23,7 +23,7 @@ import { MainLayout } from "./layouts/MainLayout.jsx";
 //Components (pages)
 import App from "./jsx/App.jsx"
 import AddForm from "./jsx/AddForm.jsx";
-import VideoPlayer from "./jsx/VideoPlayer.jsx";
+import VideoSinglePage from "./jsx/VideoSinglePage.jsx";
 import Images from "./jsx/Images.jsx"
 // import Torrent from "./jsx/Torrent.jsx"
 
@@ -50,7 +50,7 @@ FlowRouter.route("/video/:id", {
   name:"VideoPlayer",
   action () {
     mount(MainLayout, {
-      content: (<VideoPlayer />)
+      content: (<VideoSinglePage />)
     })
   }
 });
