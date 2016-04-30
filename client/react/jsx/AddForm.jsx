@@ -22,14 +22,17 @@ export default class AddForm extends React.Component {
   }
   render() {
     return (
-      <form className="new-torrent" onSubmit={this.submit.bind(this)}>
-        <div className="form-group">
-          <input type="text" name="name" className="col-xs-12" placeholder="Write name here" />
-          <input type="text" name="text" className="col-xs-12" placeholder="Write MagnetURL" />
-          <input type="text" name="url" className="col-xs-12" placeholder="Write url of the image" />
-          <input type="submit" className="btn btn-primary btn-raised" value="Submit" />
-        </div>
-      </form>
+      <div>
+        <p> In order to add a torrent you need to host it in other WebTorrent page (for example <a href="http://instant.io">instant.io</a>  ) but in the final version you will be able to host it right here</p>
+        <form className="form-horizontal" onSubmit={this.submit.bind(this)}>
+          <div className="input-group input-group-sm">
+            <input type="text" name="name" className="form-control" placeholder="Write name here" />
+            <input type="text" name="text" className="form-control" placeholder="Write MagnetURL" />
+            <input type="text" name="url" className="form-control" placeholder="Write url of the image" />
+            <a type="submit" className="btn btn-primary btn-raised btn-lg" >Submit </a>
+          </div>
+        </form>
+      </div>
     )
   }
 }

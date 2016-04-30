@@ -26,7 +26,7 @@ export default class App extends TrackerReact(React.Component) {
   render() {
     return (
       <div>
-        <h1> Hello world from react </h1>
+        <h1> Welcome to a WIP version of MeteorTorrent </h1>
         <ul className="resolutions">
         {this.torrents().map((torrent)=> {
           return <TorrentSingle key={torrent._id} torrent={torrent} />

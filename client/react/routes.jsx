@@ -24,6 +24,7 @@ import { MainLayout } from "./layouts/MainLayout.jsx";
 import App from "./jsx/App.jsx"
 import AddForm from "./jsx/AddForm.jsx";
 import VideoPlayer from "./jsx/VideoPlayer.jsx";
+import Images from "./jsx/Images.jsx"
 // import Torrent from "./jsx/Torrent.jsx"
 
 FlowRouter.route("/", {
@@ -50,6 +51,14 @@ FlowRouter.route("/video/:id", {
   action () {
     mount(MainLayout, {
       content: (<VideoPlayer />)
+    })
+  }
+});
+FlowRouter.route("/images", {
+  name:"Images",
+  action () {
+    mount(MainLayout, {
+      content: (<Images />)
     })
   }
 });

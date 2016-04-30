@@ -3,10 +3,11 @@ import React from "react";
 export default class TorrentSingle extends React.Component {
   render() {
     let url = this.props.torrent.url.toString();
+    url = "url(" + url + ")"
     let _id = "/video/" + this.props.torrent._id;
     let divStyle = {
-        color: 'white',
-        backgroundImage: 'url(' + { url } + ')'
+
+        backgroundImage: url
 
     };
 
