@@ -29,7 +29,7 @@ export default class AddForm extends React.Component {
             <input type="text" name="name" className="form-control" placeholder="Write name here" />
             <input type="text" name="text" className="form-control" placeholder="Write MagnetURL" />
             <input type="text" name="url" className="form-control" placeholder="Write url of the image" />
-            <button type="submit" onClick className="btn btn-primary btn-raised btn-lg" >Submit </button>
+            <button type="submit" className="btn btn-primary btn-raised btn-lg" >Submit </button>
           </div>
         </form>
       </div>

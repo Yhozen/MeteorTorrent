@@ -33,8 +33,6 @@ export default class VideoPlayer extends TrackerReact(React.Component) {
       let torrentId = this.torrent().magnetURL;
       const torrentDiv = "#video";
 
-      console.log(this.props.torrent);
-
       client = new WebtorrentMin();
       client.add(torrentId, function (torrent) {
         // Torrents can contain many files. Let's use the first.
